@@ -1,0 +1,148 @@
+html, body {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::selection {
+	background: #007600;
+}
+
+::-moz-selection {
+	background: #007600;
+}
+
+.st-window-draggable {
+    -webkit-app-region: drag;
+}
+
+.st-window-no-drag {
+    -webkit-app-region: no-drag;
+}
+
+.st-non-selectable {
+    -webkit-user-select: none;
+}
+
+.st-no-focus:focus {
+    outline: none;
+    border: 0;
+}
+
+.st-cursor-pointer {
+    cursor: pointer;
+}
+
+.st-no-padding {
+    padding: 0px !important;
+}
+
+.st-padding-sides-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.st-margin-vertical-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.st-margin-top-20 {
+    margin-top: 20px;
+}
+
+.st-primary-color {
+	color: #3B5998 !important;
+}
+
+.st-accent-color-1 {
+	color: #8B9DC3 !important;
+}
+
+.st-accent-color-2 {
+	color: #DFE3EE !important;
+}
+
+.st-accent-color-3 {
+	color: #F7F7F7 !important;
+}
+
+.st-accent-color-4 {
+	color: #FFFFFF !important;
+}
+
+.st-color-grey-hue-1 {
+    color: #7e7e7e !important;
+}
+
+.st-color-grey-hue-2 {
+    color: #a8a8a8 !important;
+}
+
+.st-color-grey-hue-3 {
+    color: #3f3f3f !important;
+}
+
+.st-color-grey-hue-4 {
+    color: #bdbdbd !important;
+}
+
+.st-color-red-velvet-hue-1 {
+    color: #EE4C7C !important;
+}
+
+.st-color-red-velvet-hue-2 {
+    color: #9A1750 !important;
+}
+
+.st-color-red-velvet-hue-3 {
+    color: #E3AFBC !important;
+}
+
+.st-color-red-velvet-hue-4 {
+    color: crimson !important;
+}
+
+.st-primary-color-background {
+	background-color: #3B5998 !important;
+}
+
+.st-text-light {
+    font-weight: lighter;
+}
+
+.st-text-sm {
+    font-size: 1em;
+    letter-spacing: 1.1px;
+}
+
+.st-text-xs {
+    font-size: 1.5vh !important;
+    letter-spacing: 1px;
+}
+
+.st-sidenav-left {
+    background-color: #DFE3EE !important;
+}
+
+.st-title {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.st-subtitle {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-family: monospace;
+	padding-top: 5px;
+}

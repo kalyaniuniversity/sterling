@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sterling">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none';
+		
+		script-src 'self';
+		
+		style-src 'self' 'unsafe-inline'
+		
+		https://fonts.googleapis.com/
+		https://ajax.googleapis.com/ajax/libs/;
+		
+		font-src 'self'
+		https://fonts.gstatic.com/s/materialicons/
+		https://fonts.gstatic.com/s/roboto/;
+		
+		connect-src 'self'
+		
+		http://localhost:8097
+		http://localhost:3005;
+
+		img-src 'self' http://localhost:8097;
+		base-uri 'none';
+        form-action 'self';
+		object-src 'none';">
+		
+		<meta name="theme-color" content="#009688">
+
+		<title>Sterling</title>
+
+		<script type="text/javascript" src="../script/configuration/init.js"></script>
+		<script type="text/javascript" src="../script/configuration/global.js"></script>
+
+		<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="../node_modules//angular-sanitize/angular-sanitize.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-aria/angular-aria.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-animate/angular-animate.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-messages/angular-messages.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-material/angular-material.min.js"></script>
+		<script type="text/javascript" src="../node_modules/moment/min/moment-with-locales.min.js"></script>
+		<script type="text/javascript" src="../node_modules/chart.js/dist/Chart.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+		<script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
+		<link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+		<link rel="stylesheet" href="../node_modules/animate.css/animate.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+		<script type="text/javascript" src="../script/configuration/config.js"></script>
+		<script type="text/javascript" src="../script/library/raintree.js"></script>
+		<script type="text/javascript" src="../script/library/pastebox.js"></script>
+		<script type="text/javascript" src="../script/service/transmission_service.js"></script>
+		<script type="text/javascript" src="../script/controller/home_controller.js"></script>
+		<script type="text/javascript" src="../script/controller/dashboard_controller.js"></script>
+
+		<link rel="stylesheet" href="../style/overlay.css">
+		<link rel="stylesheet" href="../style/theme.css">
+
+		<script type="text/javascript" src="../script/configuration/termination.js"></script>
+	</head>
+
+	<body layout="row" ng-controller="home_controller" class="st-non-selectable st-no-focus" ng-cloak>
+		<md-sidenav layout="column" md-component-id="left-side-nav-panel" class="md-sidenav-left st-non-selectable st-no-focus" md-is-locked-open="true" md-whiteframe="4" flex-xs="10" flex-gt-xs="10" flex-sm="10" flex-gt-sm="10" flex-md="10" flex-gt-md="10" flex-lg="10" flex-gt-lg="10" flex-xl="10">
+			<md-content layout="column" layout-align="start stretch" class="st-sidenav-left st-non-selectable st-no-focus" flex>
+				
+			</md-content>
+		</md-sidenav>
+		<div layout="column" flex>
+			<md-toolbar layout="column" md-whiteframe="3" class="st-primary-color-background st-window-draggable">
+				<span flex></span>
+				<div layout="row" class="md-toolbar-tools">
+					<div layout="column">
+						<span class="st-title st-accent-color-3 st-non-selectable st-no-focus">Sterling</span>
+						<span class="st-subtitle st-accent-color-1 st-non-selectable st-no-focus">University of Kalyani</span>
+					</div>
+					<div flex></div>
+					<md-menu md-position-mode="target-left target" class="">
+						<md-button class="md-icon-button" aria-label="show options dropdown" ng-click="show_menu($mdMenu, $event)">
+							<md-icon md-menu-origin class="material-icons st-accent-color-4">more_vert</md-icon>
+						</md-button>
+						<md-menu-content width="3">
+							<md-menu-item>
+								<md-button>
+									<md-icon md-menu-align-target class="material-icons">settings</md-icon><span class="st-text-xxs">Settings</span>
+								</md-button>
+							</md-menu-item>
+							<md-menu-item>
+								<md-button ng-click="view_software_info_dialog($event)">
+									<md-icon md-menu-align-target class="material-icons">info</md-icon><span class="st-text-xxs">Info</span>
+								</md-button>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
+				</div>
+			</md-toolbar>
+			<md-content flex ng-cloak>
+				<div ng-view></div>
+			</md-content>
+		</div>
+		<div style="visibility: hidden;">
+			<div id="st-software-info" class="md-dialog-container">
+				<md-dialog aria-label="view software information" class="st-non-selectable st-no-focus" flex-xs="100" flex-gt-xs="100" flex-sm="100" flex-gt-sm="100" flex-md="70" flex-gt-md="70" flex-lg="70" flex-gt-lg="70" flex-xl="70">
+					<md-dialog-content class="st-no-padding" ng-cloak>
+						<div layout="column" class="md-dialog-content" layout-fill>
+							<div layout="column">
+								<span class="st-title st-non-selectable st-no-focus">Sterling</span>
+								<span class="st-subtitle st-non-selectable st-no-focus">University of Kalyani</span>
+							</div>
+							<div layout="row" layout-align="center center" class="st-margin-vertical-10" layout-wrap flex>
+								<span class="st-non-selectable st-no-focus st-color-grey-hue-1 st-padding-sides-15 st-text-sm st-cursor-pointer st-font-abl">Terms of Use</span>
+								<span class="st-non-selectable st-no-focus st-color-grey-hue-1 st-padding-sides-15 st-text-sm st-cursor-pointer st-font-abl">Privacy</span>
+								<span class="st-non-selectable st-no-focus st-color-grey-hue-1 st-padding-sides-15 st-text-sm st-cursor-pointer st-font-abl">Copyright</span>
+								<span class="st-non-selectable st-no-focus st-color-grey-hue-1 st-padding-sides-15 st-text-sm st-cursor-pointer st-font-abl">Trademarks</span>
+							</div>
+							<div layout-xs="column" layout-gt-xs="column" layout-sm="column" layout-gt-sm="column" layout-md="column" layout-gt-md="row" layout-lg="row" layout-gt-lg="row" layout-xl="row" layout-align-xs="space-around center" layout-align-gt-xs="space-around center" layout-align-sm="space-around center" layout-align-gt-sm="space-around center" layout-align-md="space-around center" layout-align-gt-md="space-between end" layout-align-lg="space-between end" layout-align-gt-lg="space-between end" layout-align-xl="space-between end" class="st-margin-top-20" flex>
+								<div layout="row" layout-align="center center" class="st-margin-vertical-10" layout-wrap>
+									<span class="st-non-selectable st-no-focus st-color-grey-hue-3 st-padding-sides-15 st-text-sm st-font-abl">&copy; {{year}} Sterling. All Rights Reserved.</span>
+								</div>
+								<div layout="row" layout-align="center center" class="st-margin-vertical-10" layout-wrap>
+									<span class="st-non-selectable st-no-focus st-color-grey-hue-4 st-padding-sides-15 st-text-xs st-font-abl st-cursor-pointer">[&nbsp;attribution&nbsp;]</span>
+								</div>
+								<div layout="row" layout-align="center center" class="st-margin-vertical-10" layout-wrap>
+									<span class="st-non-selectable st-no-focus st-color-grey-hue-2 st-padding-sides-15 st-text-xs st-font-abl st-cursor-pointer">
+										Designed, Developed and Maintained with <span class="st-color-red-velvet-hue-2">&hearts;</span> by <span class="st-color-primary st-text-light">Ayan Kumar Saha</span>.
+									</span>
+								</div>
+							</div>
+							<div layout-xs="column" layout-gt-xs="column" layout-sm="column" layout-gt-sm="column" layout-md="row" layout-gt-md="row" layout-lg="row" layout-gt-lg="row" layout-xl="row" layout-align-xs="space-around center" layout-align-gt-xs="space-around center" layout-align-sm="space-around center" layout-align-gt-sm="space-around center" layout-align-md="space-between center" layout-align-gt-md="space-between center" layout-align-lg="space-between center" layout-align-gt-lg="space-between center" layout-align-xl="space-between center" class="st-margin-top-20" flex>
+								<div layout="row" layout-align="center center" class="st-margin-vertical-10" layout-wrap>
+									<span class="st-non-selectable st-no-focus st-color-grey-hue-3 st-padding-sides-15 st-text-sm st-font-abl st-text-center">Sterling &copy; {{::year}} All Rights Reserved.</span>
+								</div>
+								<div layout="row" layout-align="center center">
+									<span class="st-non-selectable st-no-focus st-color-grey-hue-4 st-text-xs st-font-abl st-cursor-pointer">{{::version}} {{::version.revision}}</span>
+								</div>
+							</div>
+						</div>
+					</md-dialog-content>
+				</md-dialog>
+			</div>
+		</div>
+	</body>
+
+</html>

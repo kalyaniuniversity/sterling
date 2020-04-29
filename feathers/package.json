@@ -1,0 +1,51 @@
+{
+	"name": "feathers",
+	"productName": "sterling",
+	"version": "0.0.1",
+	"description": "cross-platform desktop client for viewing and managing COVID-19 datasets and beyond supporting MacOS, Windows and Linux, built using Electron.",
+	"main": "engine.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kalyaniuniversity/sterling.git"
+	},
+	"keywords": [
+		"sterling",
+		"feathers"
+	],
+	"author": "Ayan Kumar Saha",
+	"contributors": [
+		{
+			"name": "Debabrata Acharya",
+			"url": "https://debacharya.com"
+		},
+		{
+			"name": "Sreshtha Dey"
+		}
+	],
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"bugs": {
+		"url": "https://github.com/kalyaniuniversity/sterling/issues"
+	},
+	"homepage": "https://github.com/kalyaniuniversity/sterling",
+	"devDependencies": {},
+	"dependencies": {
+		"angular": "^1.7.9",
+		"angular-animate": "^1.7.9",
+		"angular-aria": "^1.7.9",
+		"angular-chart.js": "^1.1.1",
+		"angular-material": "^1.1.21",
+		"angular-messages": "^1.7.9",
+		"angular-route": "^1.7.9",
+		"angular-sanitize": "^1.7.9",
+		"animate.css": "^3.7.2",
+		"chart.js": "^2.9.3",
+		"electron": "^8.2.4",
+		"jquery": "^3.5.0",
+		"moment": "^2.24.0",
+		"sweetalert": "^2.1.2"
+	}
+}
