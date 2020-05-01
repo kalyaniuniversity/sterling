@@ -1,5 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from wings.model.parsers.parser import controller
+from wings.service.utils import dataframe_to_dict
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -15,7 +17,6 @@ def method1():
 
         info = controller(1, date, state)
         return jsonify(info)
-
 
 @app.route('/api/2/', methods = ['GET'])
 def method2():
@@ -35,11 +36,25 @@ def method3():
         info = controller(3,state_code = state)
         return jsonify(info)
 
+
+@app.route('/api/4/', methods = ['GET'])
+def method4():
+    if request.method == 'GET':
+        state = request.args.get('state', None)
+
+        info = controller(4,state_code = state)
+
+        if isinstance(info, dict):
+            return jsonify(info)
         
+
 @app.route('/api/<int:n>/', methods = ['GET'])
-def method4(n):
+def methodn(n):
     info = controller(n)
-    return jsonify(info)
+
+    if isinstance(info, pd.DataFrame):
+        info = dataframe_to_dict(info)
+        return jsonify(info)
 
 
 if __name__ == '__main__':
