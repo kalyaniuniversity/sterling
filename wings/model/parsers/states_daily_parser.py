@@ -179,9 +179,12 @@ def cumulative_last_3_days_all_states(choice):
     for state in dataset:
         resultset[state['name']] = cumulative_last_3_days(state['code'], False)
     
+
     return resultset
 
     
+
+
 def total_count(state_code):
 
     cumulative_dict = dict()
