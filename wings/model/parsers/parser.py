@@ -1,6 +1,6 @@
-from wings.model.parsers import states_daily_parser as sdp
-from wings.model.parsers import state_district_wise_parser as sdwp
-from wings.model.parsers import model as m
+from model.parsers import states_daily_parser as sdp
+from model.parsers import state_district_wise_parser as sdwp
+from model.parsers import model as m
 
 dataset = m.initialize()
 

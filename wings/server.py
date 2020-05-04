@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, Response
-from wings.model.parsers.parser import controller
-from wings.service.utils import dataframe_to_dict
+from model.parsers.parser import controller
+from service.utils import dataframe_to_dict
 import pandas as pd
 
 app = Flask(__name__)
