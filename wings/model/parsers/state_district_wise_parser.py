@@ -1,5 +1,5 @@
 import requests
-from wings.model.parsers import model as m
+from model.parsers import model as m
 
 dataset = m.initialize()
 
