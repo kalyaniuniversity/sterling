@@ -1,22 +1,20 @@
-from flask import Flask, request, jsonify, Response
+from flask import Flask, jsonify
 from model.parsers.parser import controller
 from service.utils import dataframe_to_dict
 import pandas as pd
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Flask is working' #TODO: Delete the route before deploying in the production
+@app.route('/get/cummulative/<string:date>/<string:state>/', methods = ['GET'])
+def cummulative(date, state):
+    info = controller(1, date, state)
+    return jsonify(info)
 
-@app.route('/api/1/', methods = ['GET'])
-def method1():
-    if request.method == 'GET':
-        date = request.args.get('date', None)
-        state = request.args.get('state', None)
 
-        info = controller(1, date, state)
-        return jsonify(info)
+@app.route('/get/cummulative/datewise/<string:date>/<string:state>/', methods = ['GET'])
+def cummulative_datewise(date, state):
+    info = controller(2, date, state)
+    return jsonify(info)
 
 
 @app.route('/api/2/', methods = ['GET'])
