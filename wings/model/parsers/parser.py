@@ -2,8 +2,6 @@ from model.parsers import states_daily_parser as sdp
 from model.parsers import state_district_wise_parser as sdwp
 from model.parsers import model as m
 
-dataset = m.initialize()
-
 def controller(choice, date_to_fetch = None, state_code = None):
 
     while choice != 16:
