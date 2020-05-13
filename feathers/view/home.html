@@ -21,7 +21,14 @@
 		http://localhost:8097
 		http://localhost:3005;
 
-		img-src 'self' http://localhost:8097;
+		img-src 'self'
+		
+		http://localhost:8097
+		data:
+		https://a.tile.openstreetmap.org/
+		https://b.tile.openstreetmap.org/
+		https://c.tile.openstreetmap.org/;
+
 		base-uri 'none';
         form-action 'self';
 		object-src 'none';">
@@ -45,18 +52,22 @@
 		<script type="text/javascript" src="../node_modules/chart.js/dist/Chart.min.js"></script>
 		<script type="text/javascript" src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 		<script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+		<script type="text/javascript" src="../node_modules/leaflet/dist/leaflet.js"></script>
 
 		<link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
 		<link rel="stylesheet" href="../node_modules/animate.css/animate.min.css">
+		<link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 		<script type="text/javascript" src="../script/configuration/config.js"></script>
+		<script type="text/javascript" src="../script/library/enview.js"></script>
 		<script type="text/javascript" src="../script/library/raintree.js"></script>
 		<script type="text/javascript" src="../script/library/pastebox.js"></script>
 		<script type="text/javascript" src="../script/service/transmission_service.js"></script>
 		<script type="text/javascript" src="../script/controller/home_controller.js"></script>
 		<script type="text/javascript" src="../script/controller/dashboard_controller.js"></script>
+		<script type="text/javascript" src="../script/controller/map_controller.js"></script>
 
 		<link rel="stylesheet" href="../style/overlay.css">
 		<link rel="stylesheet" href="../style/theme.css">
@@ -65,9 +76,14 @@
 	</head>
 
 	<body layout="row" ng-controller="home_controller" class="st-non-selectable st-no-focus" ng-cloak>
-		<md-sidenav layout="column" md-component-id="left-side-nav-panel" class="md-sidenav-left st-non-selectable st-no-focus" md-is-locked-open="true" md-whiteframe="4" flex-xs="10" flex-gt-xs="10" flex-sm="10" flex-gt-sm="10" flex-md="10" flex-gt-md="10" flex-lg="10" flex-gt-lg="10" flex-xl="10">
-			<md-content layout="column" layout-align="start stretch" class="st-sidenav-left st-non-selectable st-no-focus" flex>
-				
+		<md-sidenav layout="column" md-component-id="left-side-nav-panel" class="md-sidenav-left st-sidenav-left-container st-non-selectable st-no-focus" md-is-locked-open="true" md-whiteframe="4">
+			<md-content layout="column" layout-align="center stretch" class="st-sidenav-left st-non-selectable st-no-focus" flex>
+				<div ng-repeat="option in enview_sidenav.options track by $index" layout="column" layout-align="start stretch" class="st-non-selectable st-no-focus">
+					<div layout="column" layout-align="center center" class="st-sidenav-option-container st-non-selectable st-no-focus" ng-init="sidenav_option_whiteframe = -1" ng-mouseenter="sidenav_option_whiteframe = 5" ng-mouseleave="sidenav_option_whiteframe = -1" md-whiteframe="{{sidenav_option_whiteframe}}" ng-click="direct_to_location(option.route)">
+						<i class="material-icons st-sidenav-option-image st-non-selectable st-no-focus">{{::option.icon_code}}</i>
+						<span class="st-non-selectable st-no-focus">{{option.name}}</span>
+					</div>
+				</div>
 			</md-content>
 		</md-sidenav>
 		<div layout="column" flex>
@@ -99,7 +115,7 @@
 				</div>
 			</md-toolbar>
 			<md-content flex ng-cloak>
-				<div ng-view></div>
+				<div ng-view class="st-full-body"></div>
 			</md-content>
 		</div>
 		<div style="visibility: hidden;">

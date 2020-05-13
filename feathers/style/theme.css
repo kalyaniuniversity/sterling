@@ -38,6 +38,11 @@ body {
     border: 0;
 }
 
+.st-full-body {
+    width: 100%;
+    height: 100%;
+}
+
 .st-cursor-pointer {
     cursor: pointer;
 }
@@ -130,6 +135,10 @@ body {
     letter-spacing: 1px;
 }
 
+.st-sidenav-left-container {
+    max-width: 100px;
+}
+
 .st-sidenav-left {
     background-color: #DFE3EE !important;
 }
@@ -145,4 +154,41 @@ body {
 	font-size: 14px;
 	font-family: monospace;
 	padding-top: 5px;
+}
+
+.st-sidenav-option-container {
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #3B5998 !important;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 1em !important;
+    -webkit-transition: all 200ms ease-out 30ms;
+    -o-transition: all 200ms ease-out 30ms;
+    transition: all 200ms ease-out 30ms;
+}
+
+.st-sidenav-option-container:hover {
+    cursor: pointer;
+    background-color: #E3AFBC !important;
+    color: #EE4C7C !important;
+    -webkit-transition: all 200ms ease-out 30ms;
+    -o-transition: all 200ms ease-out 30ms;
+    transition: all 200ms ease-out 30ms;
+}
+
+.st-sidenav-option-image {
+    font-size: 3em !important;
+    margin-bottom: 5px;
+}
+
+.st-map-container {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.st-covid-map {
+    min-height: 100vh;
+    min-width: 100%;
 }

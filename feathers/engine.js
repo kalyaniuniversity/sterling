@@ -1,7 +1,7 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
-const MainWindow = require('./view/windows/main_window');
+const MainWindow = require('./windows/main_window');
 
 process.env.NODE_ENV = "development"; //TODO: Change at the time of production
 
