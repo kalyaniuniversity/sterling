@@ -23,11 +23,13 @@ const GLOBAL_API = {
 	},
 
 	route: {
-		home: "/"
+		home: "/",
+		map: "/map"
 	},
 
 	template: {
 		dashboard: API_PREFIX.base_template_prefix + "dashboard.html",
+		map: API_PREFIX.base_template_prefix + "map.html"
 	},
 
 	fetch: {
@@ -50,7 +52,8 @@ const GLOBAL_CONST = {
 
 	controller: {
 		home: "home_controller",
-		dashboard: "dashboard_controller"
+		dashboard: "dashboard_controller",
+		map: "map_controller"
 	},
 
 	message: {

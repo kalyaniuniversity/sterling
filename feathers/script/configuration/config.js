@@ -33,6 +33,10 @@ sterling.config(['$routeProvider', '$locationProvider', function ($routeProvider
 			templateUrl: GLOBAL_API.template.dashboard,
 			controller: GLOBAL_CONST.controller.dashboard
 		})
+		.when(GLOBAL_API.route.map, {
+			templateUrl: GLOBAL_API.template.map,
+			controller: GLOBAL_CONST.controller.map
+		})
 
 		.otherwise({
 			redirectTo: GLOBAL_API.route.home

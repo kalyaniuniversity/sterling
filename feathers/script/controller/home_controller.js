@@ -1,7 +1,8 @@
-sterling.controller(GLOBAL_CONST.controller.home, ['$scope', '$mdSidenav', '$mdDialog', function($scope, $mdSidenav, $mdDialog) {
+sterling.controller(GLOBAL_CONST.controller.home, ['$scope', '$mdSidenav', '$mdDialog', '$location', function($scope, $mdSidenav, $mdDialog, $location) {
 
 	$scope.year = new Date().getFullYear();
 	$scope.version = GLOBAL_CONST.version.sterling;
+	$scope.enview_sidenav = ENVIEW_SIDENAV;
 
 	$scope.show_menu = function ($mdMenu, event) {
 		$mdMenu.open(event);
@@ -16,4 +17,8 @@ sterling.controller(GLOBAL_CONST.controller.home, ['$scope', '$mdSidenav', '$mdD
 			clickOutsideToClose: true
 		});
 	};
+
+	$scope.direct_to_location = function(route) {
+		$location.path(route);
+	}
 }]);
