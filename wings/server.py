@@ -5,6 +5,11 @@ import pandas as pd
 
 app = Flask(__name__)
 
+@app.route('/test')
+def test():
+    return jsonify({
+        'success': 'ok'
+    })
 
 @app.route('/get/cummulative/<string:date>/<string:state>/', methods=['GET'])
 def cummulative(date, state):

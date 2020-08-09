@@ -69,34 +69,34 @@ def controller(choice, date_to_fetch = None, state_code = None):
             return sdp.cumulative_last_3_days_all_states(choice)
     
         elif choice == 5:
-            return df_to_jsonObject(sdp.make_data_frame())
+            return sdp.make_data_frame()
 
         elif choice == 6:
-            return df_to_jsonObject(sdp.cumulative_last_3_days_confirmed_dataframe(choice))
+            return sdp.cumulative_last_3_days_confirmed_dataframe(choice)
 
         elif choice == 7:
-            return df_to_jsonObject(sdp.cumulative_last_3_days_recovered_dataframe(choice))
+            return sdp.cumulative_last_3_days_recovered_dataframe(choice)
 
         elif choice == 8:
-            return df_to_jsonObject(sdp.cumulative_last_3_days_deceased_dataframe(choice))
+            return sdp.cumulative_last_3_days_deceased_dataframe(choice)
 
         elif choice == 9:
-            return df_to_jsonObject(sdp.all_data_confirmed())
+            return sdp.all_data_confirmed()
 
         elif choice == 10:
-            return df_to_jsonObject(sdp.all_data_recovered())
+            return sdp.all_data_recovered()
 
         elif choice == 11:
-            return df_to_jsonObject(sdp.all_data_deceased())
+            return sdp.all_data_deceased()
 
         elif choice == 12:
-            return df_to_jsonObject(sdp.cumulative_all_data_confirmed())
+            return sdp.cumulative_all_data_confirmed()
 
         elif choice == 13:
-            return df_to_jsonObject(sdp.cumulative_all_data_recovered())
+            return sdp.cumulative_all_data_recovered()
 
         elif choice == 14:
-            return df_to_jsonObject(sdp.cumulative_all_data_deceased())
+            return sdp.cumulative_all_data_deceased()
 
         else:
             print('Invalid choice, please choose again\n')
