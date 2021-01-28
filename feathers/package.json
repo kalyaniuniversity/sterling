@@ -43,7 +43,7 @@
 		"angular-sanitize": "^1.7.9",
 		"animate.css": "^3.7.2",
 		"chart.js": "^2.9.3",
-		"electron": "^8.5.2",
+		"electron": "^9.4.0",
 		"jquery": "^3.5.0",
 		"leaflet": "^1.6.0",
 		"moment": "^2.24.0",
